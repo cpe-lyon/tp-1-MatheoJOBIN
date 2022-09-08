@@ -1,0 +1,64 @@
+# Exercice 2
+## Manual
+
+1. Which permet de trouver le chemin d'accès de la/les commandes passées en paramètres
+
+2. On peut chercher un terme dans le manuel en tapant /xxxx puis entrer (xxxx = terme à rechercher)
+
+3. On peut quitter le manuel en appuyant sur la touche q
+
+4. 
+
+
+## Navigation
+
+Pour se déplacer dans les fichiers, on utilise la commande cd suivie du chemin vers le fichier qui nous intéresse `cd /var/log`
+On peut aussi utiliser des chemins relatifs comme `cd ..` pour revenir au répertoire mère, ou `cd -` pour revenir au répértoire précédent
+Il est possible de retourner dans son répertoire personnel en tapant juste `cd`
+
+L'accès au dossier root n'est pas autorisé si l'on est pas administrateur, et cd n'est pas reconnue en root, car sudo ne fonctionne que sur les exécutables, pas sur les commandes builtin
+
+Quand on essaye de supprimer un fichier sans indiquer son chemin, le terminal ne le trouve pas, et rm ne peut pas supprimer un dossier
+la commande pour supprimer un dossier vide est `rmdir [nom du dossier]` ou `rm -d [nom du dossier]`
+pour supprimer un dossier et son contenu il faut utiliser `rm -r`
+
+Il faut donc utiliser `rm /Dossier1/Fichier1` puis `rm -r Dossier1`
+
+
+## Commandes importantes
+
+`date +"%H:%M:%S"` permet d'afficher l'heure et la commande `Time` lance une commande et analyse les ressources utilisées par cette commande
+
+Les fichiers qui commencent par . sont des fichiers cachés, qui ne s'affiche que si on le demande
+
+ls est située dans /usr/bin/ls
+
+`ll` est une autre version de la commande `ls -alF`
+
+`ls /bin` permet d'afficher les fichiers contenus dans bin
+
+`ls ..` liste les fichiers contenus dans le répertoire mère
+
+`pwd` donne le chemin vers le dossier courant
+
+`echo 'bip' > plop` envoie le résultat de echo dans plop, en écrasant les précédentes données
+`echo 'bip' >> plop` envoie le résultat de echo dans plop, à la suite des pécédentes données
+
+`sleep 10 | echo 'toto'` envoie toto sur la sortie standard
+
+`file [nom de fichier]` donne le type du fichier spécifié
+
+`ln [Nom du fichier1][Nom du fichier2]` crée un lien vers un fichier, et la modification du fichier original est répercutée sur le lien, la suppression n'impacte que le fichier original
+`ln -s [Nom du fichier1][Nom du fichier2]` crée un lien entre deux fichiers, chaque modification s'applique sur l'autre fichier, et la suppression les supprime tous les deux
+
+CTRL+S permet de mettre en pause le défilement et CTRL+D le remet en route
+
+`head -n 5 /var/log/syslog` permet d'affihcer les 5 premières lignes de syslog
+`tail -n 15 /var/log/syslog` permet d'afficher les 15 dernières lignes de syslog
+`head -n +10 | tail -n 10 /var/log/syslog` permet d'afficher les lignes 10 à 20 de syslog 
+
+# Exercice 3
+
+# Exercice 4
+
+# Exercice 5
